@@ -1,0 +1,34 @@
+{
+    "countries": [
+        {
+            "name": "France",
+            "description": "Romantic, diverse, cultural, historic, wine",
+            "path_link": "https://example.com/france"
+        },
+        {
+            "name": "Italy",
+            "description": "Artistic, culinary, historic, beautiful, Mediterranean",
+            "path_link": "https://example.com/italy"
+        },
+        {
+            "name": "Spain",
+            "description": "Vibrant, passionate, sunny, diverse, flamenco",
+            "path_link": "https://example.com/spain"
+        },
+        {
+            "name": "England",
+            "description": "Historic, royal, literary, green, tea",
+            "path_link": "https://example.com/england"
+        },
+        {
+            "name": "Netherlands",
+            "description": "Tulips, windmills, canals, cycling, liberal",
+            "path_link": "https://example.com/netherlands"
+        },
+        {
+            "name": "Switzerland",
+            "description": "Scenic, Alps, chocolate, watches, neutrality",
+            "path_link": "https://example.com/switzerland"
+        }
+    ]
+}
