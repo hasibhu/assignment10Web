@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FaArrowCircleLeft } from "react-icons/fa";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 import './Banner.css';
 // import countriesData from '../../../public/countries.json';
 
@@ -40,8 +40,8 @@ const Banner = () => {
                     ))}
                 </div>
                 <div className="button">
-                    <button className="prev text-red-600" onClick={handlePrev}><FaArrowLeft className='ml-1 text-3xl' /></button>
-                    <button className="next text-red-600 " onClick={handleNext}><FaArrowRight className='ml-1 text-3xl' /></button>
+                    <button className="prev text-red-600" onClick={handlePrev}></button>
+                    <button className="next text-red-600 " onClick={handleNext}></button>
                 </div>
             </div>
         </div>

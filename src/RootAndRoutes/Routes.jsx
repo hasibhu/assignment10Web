@@ -6,6 +6,9 @@ import Register from "../components/LoginAndRegister/Register"
 import Root from "./Root";
 import ErrorPage from "../Pages/ErrorPage";
 import AllTouristSpot from "../AllTouristSpot/AllTouristSpot";
+import AddLocation from "../components/Locations/AddLocation";
+import MyListPage from "../components/Locations/MyListPage";
+import UpdateLocation from "../components/Locations/UpdateLocation";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -22,6 +25,18 @@ const router = createBrowserRouter([
             {
                 path: '/allTouristSpot',
                 element: <AllTouristSpot></AllTouristSpot>
+            },
+            {
+                path: '/addLocation',
+                element: <AddLocation></AddLocation>
+            },
+            {
+                path: '/myListPage',
+                element: <MyListPage></MyListPage>
+            },
+            {
+                path: '/updateLocation',
+                element: <UpdateLocation></UpdateLocation>
             },
            
             {

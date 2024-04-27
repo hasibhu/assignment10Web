@@ -1,25 +1,58 @@
-import { Link } from "react-router-dom";
 
+
+import  { useState } from 'react';
+import { Link } from 'react-router-dom';
+import UseAuth from '../../Hooks/UseAuth';
 
 const Navbar = () => {
-    return (
-        <div className="flex justify-around">
-            
-            <div>
-                <Link to='/'><h1>TravelGuru</h1></Link>
-            </div>
-            <div className="space-x-4">
-                <Link to='/'><button>Home</button></Link>
-                <Link to='/allTouristSpot'><button>All Tourists Spot</button></Link>
-            </div>
-            <div className="space-x-4">
-                <button>My List</button>
-                <Link to='/login'><button>Login</button></Link>
-                <Link to='/register'><button>Register</button></Link>
-            </div>
-            
-           
+    const { user, logOut } = UseAuth() || {};
+    // console.log(user);
+    const [userOpen, setUserOpen] = useState(false);
 
+    const handleLogOut = () => {
+        logOut();
+    };
+
+    return (
+        <div className="flex justify-around pt-8">
+            <div>
+                <Link to='/'>TravelGuru</Link>
+            </div>
+            <div className="space-x-4">
+                <Link to='/'>Home</Link>
+                <Link to='/allTouristSpot'>All Tourists Spot</Link>
+            </div>
+            {user ? (
+                
+                <div className="flex flex-row" >
+                    <div className="mr-4 flex justify-center items-center"><Link to='/addLocation'><button className="btn btn-secondary" >Add Location</button></Link></div>
+                    <div className="drawer drawer-end">
+                        
+                        <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                        
+                        <div className="drawer-content ">
+                            {/* Page content here */}
+                            <label htmlFor="my-drawer-4" className="drawer-button btn mr-6 w-16 btn-primary">Profile</label>
+                            <button className='btn btn-accent'>Logout</button>
+                        </div>
+                        
+                        <div className="drawer-side">
+                            <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+                            <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                                {/* Sidebar content here */}
+                                <Link to='/myListPage'><li><a>My List</a></li></Link>
+                                <Link to='/updateLocation'><li><a>Update Location</a></li></Link>
+                                <li><a></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <div>
+                    <Link to='/login'>Login</Link>
+                    <Link to='/register'>Register</Link>
+                </div>
+            )}
         </div>
     );
 };
