@@ -8,7 +8,6 @@ import Italy from './Italy'
 const AllTouristSpot = () => {
     return (
         <div>
-            <h1>All tourist spot</h1>
             <France></France>
             <Italy></Italy>
             <Spain></Spain>

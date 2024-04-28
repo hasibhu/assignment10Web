@@ -24,7 +24,7 @@ const Navbar = () => {
             </div>
             {user ? (
                 
-                <div className="flex flex-row" >
+                <div className="flex flex-row relative" >
                     <div className="mr-4 flex justify-center items-center"><Link to='/addLocation'><button className="btn btn-secondary" >Add Location</button></Link></div>
                     <div className="drawer drawer-end">
                         
@@ -33,7 +33,7 @@ const Navbar = () => {
                         <div className="drawer-content ">
                             {/* Page content here */}
                             <label htmlFor="my-drawer-4" className="drawer-button btn mr-6 w-16 btn-primary">Profile</label>
-                            <button className='btn btn-accent'>Logout</button>
+                            <button onClick={handleLogOut} className='btn btn-accent'>Logout</button>
                         </div>
                         
                         <div className="drawer-side">
