@@ -40,9 +40,9 @@ const Navbar = () => {
                             <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                             <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                                 {/* Sidebar content here */}
-                                <Link to='/myListPage'><li><a>My List</a></li></Link>
-                                <Link to='/updateLocation'><li><a>Update Location</a></li></Link>
-                                <li><a></a></li>
+                                <li><Link to='/myListPage'>My List</Link></li>
+                                <li><Link to='/updateLocation'>Update Location</Link></li>
+                                
                             </ul>
                         </div>
                     </div>

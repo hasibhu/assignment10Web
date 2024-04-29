@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2'
 import UseAuth from '../../Hooks/UseAuth';
 
 const AddLocation = () => {
@@ -16,26 +16,30 @@ const AddLocation = () => {
         const image = form.image.value; 
         const season = form.season.value; 
         const travelDuaration = form.travelDuaration.value; 
+        const description = form.description.value; 
         const userName = form.userName.value; 
         const email = user.email;
 
-        // console.log(name, price, image, type)
-
-        const info = { touristSpotName, countryName, locationName, numberOfVisitors, cost, image, season, travelDuaration, userName, email };
+        const info = { touristSpotName, countryName, locationName, numberOfVisitors, cost, description, image, season, travelDuaration, userName, email };
         // console.log(info);
-        
 
-        // fetch("http://localhost:5000/addProduct", {
-        //     method: "POST",
-        //     headers: { "Content-type": "application/json" },
-        //     body: JSON.stringify(info)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data?.insertedId) {
-        //             alert("bhai data insert hoice")
-        //         }
-        //     })
+
+        fetch("http://localhost:3000/addLocation", {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(info)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data?.insertedId) {
+                    // alert("Data has been transferred to MongoDB.")
+                    Swal.fire({
+                        title: "Your location has been added successfully!",
+                        // text: "You clicked the button!",
+                        icon: "success"
+                    });
+                }
+            })
 
     };
 
@@ -73,7 +77,7 @@ const AddLocation = () => {
                             />
 
                         {/* country names */}
-                            {/* <label className="block mt-4 mb-2 dark:text-white" htmlFor="brand">Country Name</label>
+                            <label className="block mt-4 mb-2 dark:text-white" htmlFor="brand">Country Name</label>
                             <select
                                 name="countryName"
                                 id="country"
@@ -81,27 +85,28 @@ const AddLocation = () => {
                                 type="text"
                                 placeholder="Select Country"
                             >
-                                <option value="Test" selected>
+                                <option value="France" selected>
                                     France
                                 </option>
-                                <option value="Test2" selected>
+                                <option value="Italy" selected>
                                     Italy
                                 </option>
-                                <option value="Test3" selected>
+                                <option value="Spain" selected>
                                     Spain
                                 </option>
-                                <option value="Test3" selected>
+                                <option value="England" selected>
                                     England
                                 </option>
-                                <option value="Test" selected>
+                                <option value="Netherlands" selected>
                                     Netherlands
                                 </option>
-                                <option value="Test2" selected>
+                                <option value="Switzerland" selected>
                                     Switzerland
                                 </option>
                                 
-                            </select> */}
-                            <label
+                            </select>
+
+                            {/* <label
                                 className="block mt-4 mb-2 dark:text-white"
                                 htmlFor="price"
                             >
@@ -113,7 +118,7 @@ const AddLocation = () => {
                                 placeholder="Name of The City "
                                 id="countryName"
                                 name="countryName"
-                            />
+                            /> */}
 
                             
                        
@@ -139,7 +144,7 @@ const AddLocation = () => {
                             </label>
                             <input
                                 className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
-                                type="text"
+                                type="number"
                                 placeholder="Number of Visitors Per Year"
                                 id="numberOfVisitors"
                                 name="numberOfVisitors"
@@ -161,12 +166,8 @@ const AddLocation = () => {
                                 name="email"
                                 defaultValue={user? user.email:''}
                                 
-                            />
-                        
+                            /> 
                         </div>
-
-
-                        
 
                         {/* Right side */}
 
@@ -191,14 +192,14 @@ const AddLocation = () => {
                             </label>
                             <input
                                 className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
-                                type="text"
+                                type="number"
                                 placeholder="Average Cost in Euro"
                                 id="cost"
                                 name="cost"
                             />
                        
                             {/* season  */}
-                            <label className="block mb-2 mt-4 dark:text-white" htmlFor="type">
+                            {/* <label className="block mb-2 mt-4 dark:text-white" htmlFor="type">
                                 Season
                             </label>
                             <input
@@ -207,8 +208,28 @@ const AddLocation = () => {
                                 placeholder="Best season for the tour, like summer or winter"
                                 id="season"
                                 name="season"
-                            />
+                            /> */}
 
+                            <label className="block mt-4 mb-2 dark:text-white" htmlFor="brand">Country Name</label>
+                            <select
+                                name="season"
+                                id="season"
+                                className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
+                                type="text"
+                                placeholder="Select Season"
+                            >
+                                <option value="Summer" selected>
+                                    Summer
+                                </option>
+                                <option value="Winter" selected>
+                                    Winter
+                                </option>
+                                <option value="Autumn" selected>
+                                    Autumn
+                                </option>
+                               
+
+                            </select>
                             {/* travelDuaration */}
                             <label
                                 className="block mt-4 mb-2 dark:text-white"

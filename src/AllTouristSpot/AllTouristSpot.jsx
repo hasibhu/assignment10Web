@@ -8,9 +8,9 @@ import Italy from './Italy'
 const AllTouristSpot = () => {
     return (
         <div>
-            <France></France>
             <Italy></Italy>
             <Spain></Spain>
+            <France></France>
             <England></England>
             <Netherlands></Netherlands>
             <Switzerland></Switzerland>

@@ -1,15 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Netherlands = () => {
     return (
         <div className='flex flex-row justify-center items-center gap-10 mt-8'>
-            <div><img className='w-72' src="https://i.ibb.co/9NgTfb3/france.jpg" alt="" /></div>
+            <div><img className='w-[490px]' src="https://i.ibb.co/bBXNLKF/netherlands.jpg" alt="" /></div>
             <div className='flex flex-col'>
                 <p>Tourist Spot Name: Eifel Tower.</p>
                 <p>Location: Paris</p>
                 <p> Name: France</p>
                 <p>Average Cost: 200Euro. </p>
-                <button className='btn btn-accent'>Look on Netherlands</button>
+                <p className='w-[350px]'>The Netherlands is known everywhere as a land of windmills,  canals, and tulips, and  visitors certainly will  find these among its many tourist attractions.`</p>
+                
+                <Link to='/netherLandsAll'><button className='btn btn-accent'>Look on Netherlands</button></Link>
             </div>
         </div>
     );

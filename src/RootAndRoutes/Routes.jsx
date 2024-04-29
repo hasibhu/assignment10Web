@@ -6,9 +6,15 @@ import Register from "../components/LoginAndRegister/Register"
 import Root from "./Root";
 import ErrorPage from "../Pages/ErrorPage";
 import AllTouristSpot from "../AllTouristSpot/AllTouristSpot";
+import FranceAll from "../AllTouristSpot/FranceAll";
 import AddLocation from "../components/Locations/AddLocation";
 import MyListPage from "../components/Locations/MyListPage";
 import UpdateLocation from "../components/Locations/UpdateLocation";
+import ItalyAll from "../AllTouristSpot/ItalyAll";
+import EnglandAll from "../AllTouristSpot/EnglandAll";
+import NetherlandsAll from "../AllTouristSpot/NetherlandsAll";
+import SpainAll from "../AllTouristSpot/SpainAll";
+import SwitzerlandAll from "../AllTouristSpot/SwitzerlandAll";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -25,6 +31,30 @@ const router = createBrowserRouter([
             {
                 path: '/allTouristSpot',
                 element: <AllTouristSpot></AllTouristSpot>
+            },
+            {
+                path: '/englandAll',
+                element: <EnglandAll></EnglandAll>
+            },
+            {
+                path: '/franceAll',
+                element: <FranceAll></FranceAll>
+            },
+            {
+                path: '/italyAll',
+                element: <ItalyAll></ItalyAll>
+            },
+            {
+                path: '/netherlandsAll',
+                element: <NetherlandsAll></NetherlandsAll>
+            },
+            {
+                path: '/spainAll',
+                element: <SpainAll></SpainAll>
+            },
+            {
+                path: '/switzerlandAll',
+                element: <SwitzerlandAll></SwitzerlandAll>
             },
             {
                 path: '/addLocation',

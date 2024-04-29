@@ -3,18 +3,20 @@ import React, { useState, useEffect } from 'react';
 
 
 import './Banner.css';
+import { Link } from 'react-router-dom';
 // import countriesData from '../../../public/countries.json';
 
 
 
 const Banner = () => {
     const [items, setItems] = useState([
-        { name: 'France', image: 'https://i.ibb.co/qCkd9jS/img1.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!' },
-        { name: 'Italy', image: 'https://i.ibb.co/jrRb11q/img2.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!' },
-        { name: 'Spain', image: 'https://i.ibb.co/NSwVv8D/img3.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!' },
-        { name: 'Netherlands', image: 'https://i.ibb.co/Bq4Q0M8/img4.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!' },
-        { name: 'Switzerland', image: 'https://i.ibb.co/jTQfmTq/img5.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!' },
-        { name: 'Ireland', image: 'https://i.ibb.co/RNkk6L0/img6.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!' }
+        { name: 'France', image: 'https://i.ibb.co/qCkd9jS/img1.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/franceAll' },
+        { name: 'Italy', image: 'https://i.ibb.co/jrRb11q/img2.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/italyAll' },
+        { name: 'Spain', image: 'https://i.ibb.co/NSwVv8D/img3.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/spainAll' },
+        {
+            name: 'Netherlands', image: 'https://i.ibb.co/Bq4Q0M8/img4.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link: '/netherlandsAll' },
+        { name: 'Switzerland', image: 'https://i.ibb.co/jTQfmTq/img5.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/switzerlandAll' },
+        
     ]);
 
     const handleNext = () => {
@@ -33,8 +35,8 @@ const Banner = () => {
                         <div className="item" key={index} style={{ backgroundImage: `url(${item.image})` }}>
                             <div className="content">
                                 <div className="name text-[#c5f641]">{item.name}</div>
-                                <div className="des">{item.description}</div>
-                                <button>See More</button>
+                                {/* <div className="des">{item.description}</div> */}
+                                <Link to={item.link}><button className='btn btn-secondary'>See More</button></Link>
                             </div>
                         </div>
                     ))}
