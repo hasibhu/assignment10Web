@@ -6,11 +6,8 @@ const Netherlands = () => {
         <div className='flex flex-row justify-center items-center gap-10 mt-8'>
             <div><img className='w-[490px]' src="https://i.ibb.co/bBXNLKF/netherlands.jpg" alt="" /></div>
             <div className='flex flex-col'>
-                <p>Tourist Spot Name: Eifel Tower.</p>
-                <p>Location: Paris</p>
-                <p> Name: France</p>
-                <p>Average Cost: 200Euro. </p>
-                <p className='w-[350px]'>The Netherlands is known everywhere as a land of windmills,  canals, and tulips, and  visitors certainly will  find these among its many tourist attractions.`</p>
+               
+                <p className='w-[520px]'>The Netherlands is known everywhere as a land of windmills,  canals, and tulips, and  visitors certainly will  find these among its many tourist attractions.`</p>
                 
                 <Link to='/netherLandsAll'><button className='btn btn-accent'>Look on Netherlands</button></Link>
             </div>
