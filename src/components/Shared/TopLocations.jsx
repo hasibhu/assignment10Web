@@ -32,8 +32,8 @@ const TopLocations = () => {
 
 export default TopLocations;
 
-// https://i.ibb.co/LYvDt6y/England-Det.jpg
+// 
 // https://i.ibb.co/zFQ9qmd/england-Home.jpg
-// https://i.ibb.co/rtfWtzq/nethHome.jpg
-// https://i.ibb.co/vh5ryW2/englanddet2.jpg
+// 
+// 
 // 

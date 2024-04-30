@@ -6,10 +6,11 @@ import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 const Banner = () => {
     const [items, setItems] = useState([
-        { name: 'France', image: 'https://i.ibb.co/qCkd9jS/img1.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/franceAll' },
+        { name: 'France', image: 'https://i.ibb.co/vh5ryW2/englanddet2.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/franceAll' },
+        { name: 'England', image: 'https://i.ibb.co/zFQ9qmd/england-Home', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/englandAll' },
         { name: 'Italy', image: 'https://i.ibb.co/jrRb11q/img2.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/italyAll' },
         { name: 'Spain', image: 'https://i.ibb.co/NSwVv8D/img3.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/spainAll' },
-        {name: 'Netherlands', image: 'https://i.ibb.co/Bq4Q0M8/img4.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link: '/netherlandsAll' },
+        { name: 'Netherlands', image: 'https://i.ibb.co/rtfWtzq/nethHome.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link: '/netherlandsAll' },
         { name: 'Switzerland', image: 'https://i.ibb.co/jTQfmTq/img5.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/switzerlandAll' },
         
     ]);
