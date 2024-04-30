@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2'
 import { useLoaderData, useParams } from 'react-router-dom';
 import UseAuth from '../../Hooks/UseAuth';
 import { useEffect, useState } from 'react';
@@ -36,10 +36,6 @@ const UpdateLocation = () => {
     }
     const { touristSpotName, countryName, locationName, numberOfVisitors, cost, image, season, travelDuaration, description, } = italyData;
 
-
-
-
-
     const handleUpdateLocation = e => {
         e.preventDefault();
         const form = e.target;
@@ -56,26 +52,30 @@ const UpdateLocation = () => {
         const userName = form.userName.value;
         const email = user.email;
 
-        const info = { touristSpotName, countryName, locationName, numberOfVisitors, cost, description, image, season, travelDuaration, userName, email };
+        const updatedLocation = { touristSpotName, countryName, locationName, numberOfVisitors, cost, description, image, season, travelDuaration, userName, email };
         // console.log(info);
 
 
-        // fetch("http://localhost:3000/addLocation", {
-        //     method: "POST",
-        //     headers: { "Content-type": "application/json" },
-        //     body: JSON.stringify(info)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data?.insertedId) {
-        //             // alert("Data has been transferred to MongoDB.")
-        //             Swal.fire({
-        //                 title: "Your location has been added successfully!",
-        //                 // text: "You clicked the button!",
-        //                 icon: "success"
-        //             });
-        //         }
-        //     })
+        fetch(`http://localhost:3000/myLocation/${id}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedLocation)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Coffee has been updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
 
     };
 
