@@ -42,10 +42,10 @@ const { touristSpotName, countryName, locationName, numberOfVisitors, cost, imag
 
                         <p className="text-center"><strong>Location Name:</strong> <br /> {locationName}</p>
                         <p className="text-center"><strong>Country Name:</strong> <br /> {countryName}</p>
-                        <p className="text-center"><strong>Cost:</strong> <br /> {cost}</p>
+                        <p className="text-center"><strong>Cost:</strong> <br /> {cost} Euro</p>
                         <p className="text-center"><strong>Season:</strong> <br /> {season}</p>
                         <p className="text-center"><strong>Number Of Visitors:</strong> <br /> {numberOfVisitors}</p>
-                        <p className="text-center"><strong>Travel Duaration:</strong> <br />{travelDuaration}</p>
+                        <p className="text-center"><strong>Travel Duaration:</strong> <br />{travelDuaration} Days</p>
                         <p className="text-center" ><strong>Description:</strong> <br /> {description}</p>
                     </div>
 
