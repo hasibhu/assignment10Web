@@ -11,10 +11,12 @@ import AddLocation from "../components/Locations/AddLocation";
 import MyListPage from "../components/Locations/MyListPage";
 import UpdateLocation from "../components/Locations/UpdateLocation";
 import ItalyAll from "../AllTouristSpot/ItalyAll";
+import ItalyDetails from "../AllTouristSpot/ItalyDetails";
 import EnglandAll from "../AllTouristSpot/EnglandAll";
 import NetherlandsAll from "../AllTouristSpot/NetherlandsAll";
 import SpainAll from "../AllTouristSpot/SpainAll";
 import SwitzerlandAll from "../AllTouristSpot/SwitzerlandAll";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -45,6 +47,11 @@ const router = createBrowserRouter([
                 element: <ItalyAll></ItalyAll>
             },
             {
+                path: '/italyDetails/:id',
+                element: <ItalyDetails></ItalyDetails>,
+                loader: ({ params }) => fetch(`http://localhost:3000/myLocation/${params.id}`).then(res => res.json())
+            },
+            {
                 path: '/netherlandsAll',
                 element: <NetherlandsAll></NetherlandsAll>
             },
@@ -65,8 +72,9 @@ const router = createBrowserRouter([
                 element: <MyListPage></MyListPage>
             },
             {
-                path: '/updateLocation',
-                element: <UpdateLocation></UpdateLocation>
+                path: '/updateLocation/:id',
+                element: <UpdateLocation></UpdateLocation>,
+                
             },
            
             {

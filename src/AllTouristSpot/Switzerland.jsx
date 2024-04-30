@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 const Switzerland = () => {
@@ -11,7 +11,7 @@ const Switzerland = () => {
                 <p> Name: France</p>
                 <p>Average Cost: 200Euro. </p>
                 
-                <Link to='switzerlandAll'><button className='btn btn-accent'>Look on Switzerland</button></Link>
+                <Link to='/switzerlandAll'><button className='btn btn-accent'>Look on Switzerland</button></Link>
             </div>
         </div>
     );

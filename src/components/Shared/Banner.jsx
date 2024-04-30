@@ -29,7 +29,7 @@ const Banner = () => {
 
     return (
         <div className='w-[1200px] h-[600px] '>
-            <div className="container -mt-20">
+            <div className="container ">
                 <div className="slide">
                     {items.map((item, index) => (
                         <div className="item" key={index} style={{ backgroundImage: `url(${item.image})` }}>

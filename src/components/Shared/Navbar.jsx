@@ -14,7 +14,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="flex justify-around pt-8">
+        <div className="flex justify-around pt-8 ">
             <div>
                 <Link to='/'>TravelGuru</Link>
             </div>
@@ -38,10 +38,10 @@ const Navbar = () => {
                         
                         <div className="drawer-side">
                             <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-                            <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                            <ul className="menu  p-4 w-80  min-h-1/2 bg-base-200 text-base-content">
                                 {/* Sidebar content here */}
-                                <li><Link to='/myListPage'>My List</Link></li>
-                                <li><Link to='/updateLocation'>Update Location</Link></li>
+                                <li><Link to='/myListPage'><button className='btn btn-accent'>My List</button></Link></li>
+                                <li><Link to='/updateLocation'><button className='btn btn-secondary'>Update Location</button></Link></li>
                                 
                             </ul>
                         </div>
