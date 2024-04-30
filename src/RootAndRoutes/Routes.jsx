@@ -16,6 +16,7 @@ import EnglandAll from "../AllTouristSpot/EnglandAll";
 import NetherlandsAll from "../AllTouristSpot/NetherlandsAll";
 import SpainAll from "../AllTouristSpot/SpainAll";
 import SwitzerlandAll from "../AllTouristSpot/SwitzerlandAll";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -65,7 +66,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addLocation',
-                element: <AddLocation></AddLocation>
+                element: <PrivateRoute><AddLocation></AddLocation></PrivateRoute>
             },
             {
                 path: '/myListPage',

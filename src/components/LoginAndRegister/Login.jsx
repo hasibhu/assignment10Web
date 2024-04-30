@@ -1,5 +1,6 @@
 
 import UseAuth from '../../Hooks/UseAuth';
+import SocialLogin from './SocialLogin';
 
 const Login = () => {
 
@@ -34,8 +35,8 @@ const Login = () => {
     };
 
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero  bg-base-200">
+            <div className="hero-content flex-col ">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
                     <p className="py-6">Please log in here</p>
@@ -94,10 +95,19 @@ const Login = () => {
                         </fieldset>
                     </div>
 
-                    <button className="px-3 py-2 bg-[#FF497C] hover:bg-[#ab3154] rounded text-white font-semibold">
-                        Sign In
-                    </button>
+                    <div className='flex justify-center items-center'>
+                        <button className="px-3 py-2 w-1/2 mb-16 bg-[#FF497C] hover:bg-[#ab3154] rounded text-white font-semibold">
+                            Sign In
+                        </button>
+                   </div>
                 </form>
+            </div>
+             
+            
+
+            <div className='mt-[620px] mb-28  '>
+                <h1 className='text-center mt-20 border-t-2 border-red-400'>OR</h1>
+                <SocialLogin></SocialLogin>
             </div>
         </div>
     );
