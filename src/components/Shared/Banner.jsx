@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-
 import './Banner.css';
 import { Link } from 'react-router-dom';
-// import countriesData from '../../../public/countries.json';
-
+import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 
 const Banner = () => {
@@ -13,8 +9,7 @@ const Banner = () => {
         { name: 'France', image: 'https://i.ibb.co/qCkd9jS/img1.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/franceAll' },
         { name: 'Italy', image: 'https://i.ibb.co/jrRb11q/img2.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/italyAll' },
         { name: 'Spain', image: 'https://i.ibb.co/NSwVv8D/img3.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/spainAll' },
-        {
-            name: 'Netherlands', image: 'https://i.ibb.co/Bq4Q0M8/img4.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link: '/netherlandsAll' },
+        {name: 'Netherlands', image: 'https://i.ibb.co/Bq4Q0M8/img4.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link: '/netherlandsAll' },
         { name: 'Switzerland', image: 'https://i.ibb.co/jTQfmTq/img5.jpg', description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!', link:'/switzerlandAll' },
         
     ]);
@@ -42,8 +37,8 @@ const Banner = () => {
                     ))}
                 </div>
                 <div className="button">
-                    <button className="prev text-red-600" onClick={handlePrev}></button>
-                    <button className="next text-red-600 " onClick={handleNext}></button>
+                    <button className="prev text-red-600 " onClick={handlePrev}><FaArrowCircleLeft className='ml-1 text-3xl' /></button>
+                    <button className="next text-red-600 " onClick={handleNext}><FaArrowCircleRight className='ml-1 text-3xl' /></button>
                 </div>
             </div>
         </div>

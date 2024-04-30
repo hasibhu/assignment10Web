@@ -20,6 +20,7 @@ const SocialLogin = () => {
                 }
             })
     }
+
     return (
         <div>
             <div className="form-control mt-10 ">

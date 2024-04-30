@@ -21,7 +21,7 @@ const MyListTable = ({ data, setLocations }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/myLocation/${_id}`, {
+                fetch(`https://assignment10-server-eta.vercel.app/myLocation/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

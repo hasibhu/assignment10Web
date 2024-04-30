@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from 'sweetalert2'
+import SocialLogin from "./SocialLogin";
 
 
 const Register = () => {
@@ -51,11 +52,11 @@ const Register = () => {
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero -mt-[240px] ">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Register now!</h1>
-                    <p className="py-6">Please log in here</p>
+                    <p className="py-6">Please register here</p>
                 </div>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     
@@ -92,8 +93,8 @@ const Register = () => {
                         <input type="submit" value="Register" className="btn btn-primary mt-6" />
 
 
-                        <div className="form-control mt-6">
-                            <p className="text-center mt-20">Already registered?</p>
+                        <div className="form-control ">
+                            <p className="text-center mt-10">Already registered?</p>
                             <p className="text-center"> <span className="text-blue-400"> <Link to='/login'>Login</Link></span> here </p>
                         </div>
                     </form>
@@ -101,7 +102,11 @@ const Register = () => {
 
                 </div>
             </div>
-                    
+
+            <div className='mt-[920px] mb-28  '>
+                <h1 className='text-center mt-20 border-t-2 border-b-2 border-red-400'>OR</h1>
+                <SocialLogin></SocialLogin>
+            </div>             
         </div>
     );
 };

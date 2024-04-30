@@ -15,7 +15,7 @@ const UpdateLocation = () => {
     const [italyData, setItalyData] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/myLocation/')
+        fetch('https://assignment10-server-eta.vercel.app/myLocation/')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -56,7 +56,7 @@ const UpdateLocation = () => {
         // console.log(info);
 
 
-        fetch(`http://localhost:3000/myLocation/${id}`, {
+        fetch(`https://assignment10-server-eta.vercel.app/myLocation/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

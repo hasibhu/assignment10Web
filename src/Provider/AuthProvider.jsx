@@ -1,24 +1,20 @@
 
 import { createContext, useEffect, useState } from "react";
-import {  createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import {  GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../../src/firebase/firebase.config'
-
-
-
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
-
-
+//social auth providers
+const googleProvider = new GoogleAuthProvider(); //required for google pop-up login
+const gitHubProvider = new GithubAuthProvider(); //required for github pop-up login
 
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
-   
-
+    
     //create user with email
     const createUser = async (email, password) => {
         setLoading(true);
@@ -30,6 +26,18 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
+
+    //Google login
+
+    const googleLogin = () => {
+        return signInWithPopup(auth, googleProvider);
+    }
+
+    //GitHub log in
+    const githubLogin = () => {
+        return signInWithPopup(auth, gitHubProvider)
+    }
+
     // logout
     const logOut = () => {
         setLoading(true)
@@ -54,9 +62,9 @@ const AuthProvider = ({ children }) => {
         loading,
         createUser,
         signInWithEmailPassword,
+        googleLogin,
+        githubLogin,
         logOut,
-
-        
     };
 
 

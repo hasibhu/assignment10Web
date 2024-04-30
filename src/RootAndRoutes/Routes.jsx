@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path: '/italyDetails/:id',
                 element: <ItalyDetails></ItalyDetails>,
-                loader: ({ params }) => fetch(`http://localhost:3000/myLocation/${params.id}`).then(res => res.json())
+                loader: ({ params }) => fetch(`https://assignment10-server-eta.vercel.app/myLocation/${params.id}`).then(res => res.json())
             },
             {
                 path: '/netherlandsAll',
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addLocation',
-                element: <PrivateRoute><AddLocation></AddLocation></PrivateRoute>
+                element: <AddLocation></AddLocation>
             },
             {
                 path: '/myListPage',
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
             {
                 path: '/updateLocation/:id',
                 element: <UpdateLocation></UpdateLocation>,
-                loader: ({ params }) => fetch(`http://localhost:3000/myLocation/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment10-server-eta.vercel.app/myLocation/${params.id}`)
             },
             {
                 path: '/login',

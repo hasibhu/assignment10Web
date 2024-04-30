@@ -10,7 +10,7 @@ const MyListPage = () => {
     const [locations, setLocations] = useState([]); 
    
     useEffect(() => {
-        fetch(`http://localhost:3000/myLocation/${user?.email}`)
+        fetch(`https://assignment10-server-eta.vercel.app/myLocation/${user?.email}`)
             .then(res => res.json()) 
             .then(data => {
                 // console.log(data.length);

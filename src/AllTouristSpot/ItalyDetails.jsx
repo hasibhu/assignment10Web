@@ -7,7 +7,7 @@ const ItalyDetails = () => {
     const [italyData, setItalyData] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/myLocation/')
+        fetch('https://assignment10-server-eta.vercel.app/myLocation/')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -38,14 +38,15 @@ const { touristSpotName, countryName, locationName, numberOfVisitors, cost, imag
                         <img className="w-[750px] text-center" src={image} alt="Image is Not available. Please insert a valid image it" />
                     </div>
                     <div>
-                        <p><strong>Tourist Spot Name:</strong> {touristSpotName}</p>
-                        <p><strong>Location Name:</strong> {locationName}</p>
-                        <p><strong>Country Name:</strong> {countryName}</p>
-                        <p><strong>Cost:</strong> {cost}</p>
-                        <p><strong>Season:</strong> {season}</p>
-                        <p><strong>Number Of Visitors:</strong> {numberOfVisitors}</p>
-                        <p><strong>Travel Duaration:</strong> {travelDuaration}</p>
-                        <p><strong>Description:</strong> {description}</p>
+                        <p className="text-center"><strong className="text-2xl">Tourist Spot Name:</strong> <br /> {touristSpotName}</p>
+
+                        <p className="text-center"><strong>Location Name:</strong> <br /> {locationName}</p>
+                        <p className="text-center"><strong>Country Name:</strong> <br /> {countryName}</p>
+                        <p className="text-center"><strong>Cost:</strong> <br /> {cost}</p>
+                        <p className="text-center"><strong>Season:</strong> <br /> {season}</p>
+                        <p className="text-center"><strong>Number Of Visitors:</strong> <br /> {numberOfVisitors}</p>
+                        <p className="text-center"><strong>Travel Duaration:</strong> <br />{travelDuaration}</p>
+                        <p className="text-center" ><strong>Description:</strong> <br /> {description}</p>
                     </div>
 
                    
@@ -104,7 +105,7 @@ export default ItalyDetails;
 //     const [italyData, setItalyData] = useState(null);
 
 //     useEffect(() => {
-//         fetch('http://localhost:3000/myLocation/')
+//         fetch('https://assignment10-server-eta.vercel.app/')
 //             .then(response => {
 //                 if (!response.ok) {
 //                     throw new Error('Network response was not ok');
