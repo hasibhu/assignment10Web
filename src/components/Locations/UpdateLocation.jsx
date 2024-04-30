@@ -1,9 +1,45 @@
 
+import { useLoaderData, useParams } from 'react-router-dom';
 import UseAuth from '../../Hooks/UseAuth';
+import { useEffect, useState } from 'react';
 
 const UpdateLocation = () => {
     const { user } = UseAuth() || {};
-    // const email = user.email;
+    // // const email = user.email;
+    // const location = useLoaderData();
+    // console.log(location);
+
+    // // const { touristSpotName, countryName, locationName, numberOfVisitors, cost, description, image, season, travelDuaration, userName, email } = location;
+    const { id } = useParams();
+    console.log(id);
+    const [italyData, setItalyData] = useState(null);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/myLocation/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Filter the data array to find the item with matching _id
+                const foundData = data.find(item => item._id === id);
+                setItalyData(foundData);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }, [id]);
+
+    // Check if italyData is null before rendering
+    if (!italyData) {
+        return <div>Loading...</div>;
+    }
+    const { touristSpotName, countryName, locationName, numberOfVisitors, cost, image, season, travelDuaration, description, } = italyData;
+
+
+
+
+
     const handleUpdateLocation = e => {
         e.preventDefault();
         const form = e.target;
@@ -60,6 +96,8 @@ const UpdateLocation = () => {
                         </span>
                     </p>
                 </div>
+
+
                 {/* form */}
                 <form onSubmit={handleUpdateLocation}>
                     <div className="flex gap-8 ">
@@ -72,6 +110,7 @@ const UpdateLocation = () => {
                                 className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
                                 type="text"
                                 placeholder="Name"
+                                defaultValue={touristSpotName}
                                 id="name"
                                 name="touristSpotName"
                             />
@@ -83,6 +122,7 @@ const UpdateLocation = () => {
                                 id="country"
                                 className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
                                 type="text"
+                                defaultValue={countryName}
                                 placeholder="Select Country"
                             >
                                 <option value="France" selected>
@@ -135,6 +175,7 @@ const UpdateLocation = () => {
                                 placeholder="Name of The City "
                                 id="locationName"
                                 name="locationName"
+                                defaultValue={locationName}
                             />
 
                             {/* Number of Visitors Per Year  */}
@@ -148,8 +189,9 @@ const UpdateLocation = () => {
                                 placeholder="Number of Visitors Per Year"
                                 id="numberOfVisitors"
                                 name="numberOfVisitors"
+                                defaultValue={numberOfVisitors}
                             />
-
+                            
                             {/* user email */}
 
                             <label
@@ -181,8 +223,9 @@ const UpdateLocation = () => {
                                 type="text"
                                 placeholder="Enter Image URL"
                                 id="image"
+                                defaultValue={image}
                                 name="image" />
-
+                            
                             {/* Average cost  */}
                             <label
                                 className="block mt-4 mb-2 dark:text-white"
@@ -196,6 +239,7 @@ const UpdateLocation = () => {
                                 placeholder="Average Cost in Euro"
                                 id="cost"
                                 name="cost"
+                                defaultValue={cost}
                             />
 
                             {/* season  */}
@@ -217,6 +261,7 @@ const UpdateLocation = () => {
                                 className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
                                 type="text"
                                 placeholder="Select Season"
+                                defaultValue={season}
                             >
                                 <option value="Summer" selected>
                                     Summer
@@ -228,7 +273,7 @@ const UpdateLocation = () => {
                                     Autumn
                                 </option>
 
-
+                            
                             </select>
                             {/* travelDuaration */}
                             <label
@@ -246,6 +291,7 @@ const UpdateLocation = () => {
                                 placeholder="Minimum tour duration 5 days"
                                 id="travelDuaration"
                                 name="travelDuaration"
+                                defaultValue={travelDuaration}
                             />
 
 
@@ -259,6 +305,7 @@ const UpdateLocation = () => {
                                 placeholder="User Name"
                                 id="userName"
                                 name="userName"
+                                defaultValue={user?.userName}
 
                             />
                         </div>
@@ -267,7 +314,14 @@ const UpdateLocation = () => {
                     {/* description  */}
                     <div className='flex flex-col justify-center items-center'>
                         <h1 className='text-center text-xl font-bold' >Location Description</h1>
-                        <textarea className="textarea textarea-error w-[650px] h-[140px]" name='description' type="text" placeholder="Description"></textarea>
+                        <textarea className="textarea textarea-error w-[650px] h-[140px]"
+                            name='description'
+                            type="text"
+                            placeholder="Description"
+                            defaultValue={description}
+                        >
+
+                        </textarea>
 
                     </div>
                     <input

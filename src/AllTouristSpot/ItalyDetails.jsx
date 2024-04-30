@@ -27,6 +27,8 @@ const ItalyDetails = () => {
         return <div>Loading...</div>;
     }
 const { touristSpotName, countryName, locationName, numberOfVisitors, cost, image, season, travelDuaration,  description,  } = italyData;
+   
+    
     return (
         <div>
             <h1 className="text-center mt-8 mb-8  text-4xl text-[#9ACD32] ">Details of Location : {touristSpotName}</h1>

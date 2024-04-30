@@ -8,8 +8,7 @@ const MyListPage = () => {
     const { user } = UseAuth() || {};
     //store imported data from DB
     const [locations, setLocations] = useState([]); 
-    // console.log(location);
-    // useEffect(()=>{}, [])
+   
     useEffect(() => {
         fetch(`http://localhost:3000/myLocation/${user?.email}`)
             .then(res => res.json()) 
@@ -17,7 +16,7 @@ const MyListPage = () => {
                 // console.log(data.length);
                 setLocations(data)
             }) 
-    }, [user])
+    }, [locations])
     
     return (
         <div className=" bg-orange-200 p-10 mt-10">
@@ -40,7 +39,13 @@ const MyListPage = () => {
                     </thead>
                     <tbody className="border border-red-500">
                         {
-                            locations.map(location => <MyListTable key={location._id} data={location}></MyListTable>)
+                            locations.map(location => <MyListTable
+                                key={location._id}
+                                data={location}
+                                setLocations={setLocations}
+                            >
+                                
+                                </MyListTable>)
                         }
                     </tbody>
                 </table>
